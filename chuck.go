@@ -44,7 +44,7 @@ func main() {
 	var alive = true
 	jokes := make(map[int]string)
 	c := make(chan string)
-	f, err := os.Create("./tmp/norris")
+	f, err := os.Create("./norris.txt")
 	check(err)
 	defer f.Close()
 
@@ -61,7 +61,6 @@ func main() {
 			time.Sleep(3000 * time.Millisecond)
     }	
 	fmt.Println("map:", jokes)
-	//time.Sleep(60 * time.Second)
 
 	for k, v := range jokes {
 		f.WriteString(v)
